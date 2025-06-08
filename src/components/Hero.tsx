@@ -1,8 +1,10 @@
-
-import React from 'react';
+import React, { useState } from 'react';
 import { ArrowRight, Bot, Zap, TrendingUp } from 'lucide-react';
+import ContactDialog from './ContactDialog';
 
 const Hero = () => {
+  const [isContactDialogOpen, setIsContactDialogOpen] = useState(false);
+
   return (
     <section className="pt-20 pb-16 bg-gradient-to-br from-blue-50 via-white to-purple-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -28,7 +30,10 @@ const Hero = () => {
             </div>
             
             <div className="flex flex-col sm:flex-row gap-4">
-              <button className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-8 py-4 rounded-lg font-semibold hover:shadow-xl transition-all duration-300 transform hover:scale-105 flex items-center justify-center">
+              <button 
+                onClick={() => setIsContactDialogOpen(true)}
+                className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-8 py-4 rounded-lg font-semibold hover:shadow-xl transition-all duration-300 transform hover:scale-105 flex items-center justify-center"
+              >
                 Kostenlose Beratung
                 <ArrowRight className="ml-2 w-5 h-5" />
               </button>
@@ -83,12 +88,16 @@ const Hero = () => {
               </div>
             </div>
             
-            {/* Background decorations */}
             <div className="absolute -top-4 -right-4 w-72 h-72 bg-gradient-to-r from-blue-400 to-purple-400 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-pulse"></div>
             <div className="absolute -bottom-8 -left-4 w-72 h-72 bg-gradient-to-r from-purple-400 to-pink-400 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-pulse"></div>
           </div>
         </div>
       </div>
+
+      <ContactDialog 
+        open={isContactDialogOpen} 
+        onOpenChange={setIsContactDialogOpen} 
+      />
     </section>
   );
 };

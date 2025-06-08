@@ -1,8 +1,10 @@
-
-import React from 'react';
+import React, { useState } from 'react';
 import { Users, Target, Lightbulb, Award } from 'lucide-react';
+import ContactDialog from './ContactDialog';
 
 const About = () => {
+  const [isContactDialogOpen, setIsContactDialogOpen] = useState(false);
+
   const values = [
     {
       icon: Target,
@@ -149,12 +151,20 @@ const About = () => {
               Lassen Sie uns gemeinsam herausfinden, wie KI-Agenten und intelligente Automatisierung 
               Ihr Unternehmen auf das nächste Level bringen können.
             </p>
-            <button className="bg-white text-blue-600 px-8 py-4 rounded-lg font-semibold hover:bg-gray-50 transition-all duration-300 transform hover:scale-105">
+            <button 
+              onClick={() => setIsContactDialogOpen(true)}
+              className="bg-white text-blue-600 px-8 py-4 rounded-lg font-semibold hover:bg-gray-50 transition-all duration-300 transform hover:scale-105"
+            >
               Jetzt Kontakt aufnehmen
             </button>
           </div>
         </div>
       </div>
+
+      <ContactDialog 
+        open={isContactDialogOpen} 
+        onOpenChange={setIsContactDialogOpen} 
+      />
     </section>
   );
 };

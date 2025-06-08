@@ -2,9 +2,11 @@
 import React, { useState } from 'react';
 import { Menu, X, Bot, Zap } from 'lucide-react';
 import { Link, useLocation } from 'react-router-dom';
+import ContactDialog from './ContactDialog';
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [isContactDialogOpen, setIsContactDialogOpen] = useState(false);
   const location = useLocation();
 
   const navItems = [
@@ -45,7 +47,10 @@ const Navigation = () => {
                 {item.name}
               </Link>
             ))}
-            <button className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-6 py-2 rounded-lg font-medium hover:shadow-lg transition-all duration-300 transform hover:scale-105">
+            <button 
+              onClick={() => setIsContactDialogOpen(true)}
+              className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-6 py-2 rounded-lg font-medium hover:shadow-lg transition-all duration-300 transform hover:scale-105"
+            >
               Beratung anfragen
             </button>
           </div>
@@ -79,13 +84,24 @@ const Navigation = () => {
                   {item.name}
                 </Link>
               ))}
-              <button className="w-full mt-2 bg-gradient-to-r from-blue-600 to-purple-600 text-white px-6 py-2 rounded-lg font-medium">
+              <button 
+                onClick={() => {
+                  setIsContactDialogOpen(true);
+                  setIsOpen(false);
+                }}
+                className="w-full mt-2 bg-gradient-to-r from-blue-600 to-purple-600 text-white px-6 py-2 rounded-lg font-medium"
+              >
                 Beratung anfragen
               </button>
             </div>
           </div>
         )}
       </div>
+
+      <ContactDialog 
+        open={isContactDialogOpen} 
+        onOpenChange={setIsContactDialogOpen} 
+      />
     </nav>
   );
 };
