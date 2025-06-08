@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import { Users, Target, Lightbulb, Award } from 'lucide-react';
 import ContactDialog from './ContactDialog';
@@ -59,7 +60,7 @@ const About = () => {
                 <h3 className="text-2xl font-bold text-gray-900 mb-6">Unsere Geschichte</h3>
                 <div className="space-y-4 text-gray-600">
                   <p>
-                    Gegründet 2023 mit der Vision, künstliche Intelligenz für Unternehmen jeder Größe 
+                    Gegründet 2025 mit der Vision, künstliche Intelligenz für Unternehmen jeder Größe 
                     zugänglich zu machen. Wir erkannten das immense Potenzial von KI-Agenten zur 
                     Prozessoptimierung und Effizienzsteigerung.
                   </p>
@@ -71,13 +72,9 @@ const About = () => {
                   </p>
                 </div>
                 
-                <div className="mt-8 grid grid-cols-2 gap-6">
+                <div className="mt-8 grid grid-cols-1 gap-6">
                   <div>
-                    <div className="text-3xl font-bold text-blue-600">50+</div>
-                    <div className="text-gray-600">Erfolgreiche Projekte</div>
-                  </div>
-                  <div>
-                    <div className="text-3xl font-bold text-purple-600">95%</div>
+                    <div className="text-3xl font-bold text-purple-600">100%</div>
                     <div className="text-gray-600">Kundenzufriedenheit</div>
                   </div>
                 </div>

@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { Bot, Mail, Phone, MapPin, Linkedin, Twitter, Github } from 'lucide-react';
+import { Bot, Mail, Phone, MapPin, Linkedin } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const Footer = () => {
@@ -24,24 +24,19 @@ const Footer = () => {
               <a href="#" className="text-gray-400 hover:text-blue-400 transition-colors">
                 <Linkedin className="w-5 h-5" />
               </a>
-              <a href="#" className="text-gray-400 hover:text-blue-400 transition-colors">
-                <Twitter className="w-5 h-5" />
-              </a>
-              <a href="#" className="text-gray-400 hover:text-blue-400 transition-colors">
-                <Github className="w-5 h-5" />
-              </a>
             </div>
           </div>
 
           {/* Services */}
           <div>
-            <h3 className="text-lg font-semibold mb-4">Unsere Services</h3>
+            <h3 className="text-lg font-semibold mb-4">Unsere Leistungen</h3>
             <ul className="space-y-2 text-gray-400">
-              <li><a href="#" className="hover:text-white transition-colors">KI-Agenten Entwicklung</a></li>
-              <li><a href="#" className="hover:text-white transition-colors">Chatbots & Automatisierung</a></li>
-              <li><a href="#" className="hover:text-white transition-colors">Prozessoptimierung</a></li>
-              <li><a href="#" className="hover:text-white transition-colors">Datenanalyse & KI</a></li>
-              <li><a href="#" className="hover:text-white transition-colors">KI-Beratung</a></li>
+              <li><a href="#" className="hover:text-white transition-colors">Intelligente KI-Agenten</a></li>
+              <li><a href="#" className="hover:text-white transition-colors">Chatbots & Kundenservice</a></li>
+              <li><a href="#" className="hover:text-white transition-colors">Datenanalyse & Insights</a></li>
+              <li><a href="#" className="hover:text-white transition-colors">Workflow-Automatisierung</a></li>
+              <li><a href="#" className="hover:text-white transition-colors">KI-Integration</a></li>
+              <li><a href="#" className="hover:text-white transition-colors">KI-Beratung & Strategie</a></li>
             </ul>
           </div>
 
@@ -53,7 +48,6 @@ const Footer = () => {
               <li><Link to="/cases" className="hover:text-white transition-colors">Referenzen</Link></li>
               <li><a href="#" className="hover:text-white transition-colors">Karriere</a></li>
               <li><a href="#" className="hover:text-white transition-colors">Blog</a></li>
-              <li><a href="#" className="hover:text-white transition-colors">Presse</a></li>
             </ul>
           </div>
 
@@ -87,10 +81,9 @@ const Footer = () => {
               © 2024 PK Prozessautomatisierung. Alle Rechte vorbehalten.
             </div>
             <div className="flex space-x-6 text-sm text-gray-400">
-              <a href="#" className="hover:text-white transition-colors">Datenschutz</a>
-              <a href="#" className="hover:text-white transition-colors">Impressum</a>
-              <a href="#" className="hover:text-white transition-colors">AGB</a>
-              <a href="#" className="hover:text-white transition-colors">Cookies</a>
+              <Link to="/privacy" className="hover:text-white transition-colors">Datenschutz & AGB</Link>
+              <Link to="/impressum" className="hover:text-white transition-colors">Impressum</Link>
+              <Link to="/cookies" className="hover:text-white transition-colors">Cookies</Link>
             </div>
           </div>
         </div>
