@@ -14,7 +14,7 @@ const Footer = () => {
               <div className="bg-gradient-to-r from-blue-600 to-purple-600 p-2 rounded-lg">
                 <Bot className="h-6 w-6 text-white" />
               </div>
-              <span className="text-xl font-bold">AI-Solutions</span>
+              <span className="text-xl font-bold">PK Prozessautomatisierung</span>
             </div>
             <p className="text-gray-400 leading-relaxed">
               Ihre Experten für KI-Agenten, intelligente Automatisierung und 
@@ -63,17 +63,17 @@ const Footer = () => {
             <div className="space-y-3 text-gray-400">
               <div className="flex items-center">
                 <Mail className="w-4 h-4 mr-3" />
-                <span>kontakt@ai-solutions.de</span>
+                <span>kontakt@pk-prozessautomatisierung.de</span>
               </div>
               <div className="flex items-center">
                 <Phone className="w-4 h-4 mr-3" />
-                <span>+49 (0) 30 12345678</span>
+                <span>+49 (0) 6224 9999999</span>
               </div>
               <div className="flex items-start">
                 <MapPin className="w-4 h-4 mr-3 mt-1" />
                 <span>
-                  Technologiepark 15<br />
-                  10115 Berlin, Deutschland
+                  Draisstraße 6<br />
+                  69207 Sandhausen, Deutschland
                 </span>
               </div>
             </div>
@@ -84,7 +84,7 @@ const Footer = () => {
         <div className="border-t border-gray-800 mt-8 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <div className="text-gray-400 text-sm mb-4 md:mb-0">
-              © 2024 AI-Solutions. Alle Rechte vorbehalten.
+              © 2024 PK Prozessautomatisierung. Alle Rechte vorbehalten.
             </div>
             <div className="flex space-x-6 text-sm text-gray-400">
               <a href="#" className="hover:text-white transition-colors">Datenschutz</a>

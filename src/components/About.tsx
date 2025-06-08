@@ -23,22 +23,16 @@ const About = () => {
 
   const team = [
     {
-      name: 'Dr. Sarah Mueller',
-      role: 'CEO & KI-Strategin',
-      description: 'Expertin für maschinelles Lernen mit 10+ Jahren Erfahrung in der Entwicklung von KI-Agenten.',
-      image: 'https://images.unsplash.com/photo-1494790108755-2616b612b786?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80'
-    },
-    {
-      name: 'Marcus Weber',
-      role: 'CTO & Bot-Entwickler',
+      name: 'Kaan Kilic',
+      role: 'CTO & Botentwickler',
       description: 'Spezialist für Automatisierung und intelligente Systeme mit Fokus auf Prozessoptimierung.',
       image: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80'
     },
     {
-      name: 'Lisa Chen',
-      role: 'Lead Data Scientist',
-      description: 'Expertin für Datenanalyse und KI-Modellierung mit Schwerpunkt auf Business Intelligence.',
-      image: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80'
+      name: 'Adrian Pajaziti',
+      role: 'CBO',
+      description: 'Experte für Geschäftsentwicklung und strategische Partnerschaften mit Fokus auf Kundenbeziehungen.',
+      image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80'
     }
   ];
 
@@ -47,7 +41,7 @@ const About = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold text-gray-900 mb-4">
-            Über <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">AI-Solutions</span>
+            Über <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">PK Prozessautomatisierung</span>
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
             Wir sind ein junges, dynamisches Team von KI-Experten, das Unternehmen dabei hilft, 
@@ -127,7 +121,7 @@ const About = () => {
             Unser <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">Expertenteam</span>
           </h3>
           
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
             {team.map((member, index) => (
               <div key={index} className="bg-white rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:scale-105 overflow-hidden">
                 <img 
