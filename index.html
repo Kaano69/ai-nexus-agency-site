@@ -21,6 +21,39 @@
 
     <!-- n8n Chat Widget Styles -->
     <link href="https://cdn.jsdelivr.net/npm/@n8n/chat/dist/style.css" rel="stylesheet" />
+    
+    <!-- Custom Chat Widget Styles - Override pink with blue -->
+    <style>
+      /* Override n8n chat widget colors from pink to blue */
+      .n8n-chat-container {
+        --n8n-chat-primary-color: #3b82f6 !important;
+        --n8n-chat-primary-color-hover: #2563eb !important;
+        --n8n-chat-primary-color-light: #dbeafe !important;
+      }
+      
+      /* Fallback selectors for different possible class names */
+      [class*="chat"] [style*="pink"], 
+      [class*="chat"] [style*="#e91e63"],
+      [class*="chat"] [style*="#f06292"] {
+        background-color: #3b82f6 !important;
+        border-color: #3b82f6 !important;
+      }
+      
+      /* Override any pink buttons or elements */
+      .n8n-chat button[style*="pink"],
+      .n8n-chat button[style*="#e91e63"],
+      .n8n-chat .button-primary {
+        background-color: #3b82f6 !important;
+        border-color: #3b82f6 !important;
+      }
+      
+      .n8n-chat button[style*="pink"]:hover,
+      .n8n-chat button[style*="#e91e63"]:hover,
+      .n8n-chat .button-primary:hover {
+        background-color: #2563eb !important;
+        border-color: #2563eb !important;
+      }
+    </style>
   </head>
 
   <body>
@@ -34,7 +67,11 @@
       import { createChat } from 'https://cdn.jsdelivr.net/npm/@n8n/chat/dist/chat.bundle.es.js';
 
       createChat({
-        webhookUrl: 'https://n8n.heideldesign.de/webhook/0417b7d0-1edd-4618-9975-64c28ff24692/chat'
+        webhookUrl: 'https://n8n.heideldesign.de/webhook/0417b7d0-1edd-4618-9975-64c28ff24692/chat',
+        initialMessages: [
+          'Hallo 👋',
+          'Mein Name ist Hannah, wie kann ich dir heute helfen?'
+        ],
       });
     </script>
   </body>
