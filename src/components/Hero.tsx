@@ -5,6 +5,13 @@ import ContactDialog from './ContactDialog';
 const Hero = () => {
   const [isContactDialogOpen, setIsContactDialogOpen] = useState(false);
 
+  const scrollToServices = () => {
+    const servicesSection = document.getElementById('services');
+    if (servicesSection) {
+      servicesSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <section className="pt-20 pb-16 bg-gradient-to-br from-blue-50 via-white to-purple-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -37,7 +44,10 @@ const Hero = () => {
                 Kostenlose Beratung
                 <ArrowRight className="ml-2 w-5 h-5" />
               </button>
-              <button className="border-2 border-gray-300 text-gray-700 px-8 py-4 rounded-lg font-semibold hover:border-blue-600 hover:text-blue-600 transition-all duration-300">
+              <button 
+                onClick={scrollToServices}
+                className="border-2 border-gray-300 text-gray-700 px-8 py-4 rounded-lg font-semibold hover:border-blue-600 hover:text-blue-600 transition-all duration-300"
+              >
                 Unsere Lösungen
               </button>
             </div>

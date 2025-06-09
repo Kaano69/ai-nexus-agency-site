@@ -1,6 +1,7 @@
 
 import React from 'react';
 import { Bot, MessageSquare, BarChart3, Cog, Zap, Shield } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const Services = () => {
   const services = [
@@ -57,15 +58,15 @@ const Services = () => {
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {services.map((service, index) => (
-            <div key={index} className="bg-white rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:scale-105 p-8 border border-gray-100">
+            <div key={index} className="bg-white rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:scale-105 p-8 border border-gray-100 flex flex-col h-full">
               <div className="bg-gradient-to-r from-blue-600 to-purple-600 p-3 rounded-lg w-fit mb-6">
                 <service.icon className="w-6 h-6 text-white" />
               </div>
               
               <h3 className="text-xl font-semibold text-gray-900 mb-4">{service.title}</h3>
-              <p className="text-gray-600 mb-6 leading-relaxed">{service.description}</p>
+              <p className="text-gray-600 mb-6 leading-relaxed flex-grow">{service.description}</p>
               
-              <ul className="space-y-2">
+              <ul className="space-y-2 mb-6">
                 {service.features.map((feature, featureIndex) => (
                   <li key={featureIndex} className="flex items-center text-sm text-gray-700">
                     <div className="w-2 h-2 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full mr-3"></div>
@@ -74,7 +75,7 @@ const Services = () => {
                 ))}
               </ul>
               
-              <button className="mt-6 w-full bg-gray-50 hover:bg-gradient-to-r hover:from-blue-600 hover:to-purple-600 hover:text-white text-gray-700 py-3 rounded-lg font-medium transition-all duration-300">
+              <button className="mt-auto w-full bg-gray-50 hover:bg-gradient-to-r hover:from-blue-600 hover:to-purple-600 hover:text-white text-gray-700 py-3 rounded-lg font-medium transition-all duration-300">
                 Mehr erfahren
               </button>
             </div>
@@ -90,9 +91,12 @@ const Services = () => {
               Jedes Unternehmen ist einzigartig. Wir entwickeln individuelle KI-Agenten und 
               Automatisierungslösungen, die perfekt zu Ihren spezifischen Anforderungen passen.
             </p>
-            <button className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-8 py-4 rounded-lg font-semibold hover:shadow-xl transition-all duration-300 transform hover:scale-105">
+            <Link 
+              to="/contact"
+              className="inline-block bg-gradient-to-r from-blue-600 to-purple-600 text-white px-8 py-4 rounded-lg font-semibold hover:shadow-xl transition-all duration-300 transform hover:scale-105"
+            >
               Individuelle Lösung anfragen
-            </button>
+            </Link>
           </div>
         </div>
       </div>

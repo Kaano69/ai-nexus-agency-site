@@ -1,6 +1,6 @@
 
 import React, { useState } from 'react';
-import { Mail, Phone, MapPin, Clock, Send, MessageSquare } from 'lucide-react';
+import { Mail, Phone, MapPin, Clock, Send } from 'lucide-react';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -57,7 +57,7 @@ const Contact = () => {
                 </div>
                 <div>
                   <div className="font-semibold text-gray-900">E-Mail</div>
-                  <div className="text-gray-600">kontakt@ai-solutions.de</div>
+                  <div className="text-gray-600">kontakt@pk-prozessautomatisierung.de</div>
                 </div>
               </div>
 
@@ -67,7 +67,7 @@ const Contact = () => {
                 </div>
                 <div>
                   <div className="font-semibold text-gray-900">Telefon</div>
-                  <div className="text-gray-600">+49 (0) 30 12345678</div>
+                  <div className="text-gray-600">+49 (0) 6224 9999999</div>
                 </div>
               </div>
 
@@ -78,8 +78,8 @@ const Contact = () => {
                 <div>
                   <div className="font-semibold text-gray-900">Adresse</div>
                   <div className="text-gray-600">
-                    Technologiepark 15<br />
-                    10115 Berlin, Deutschland
+                    Draisstraße 6<br />
+                    69207 Sandhausen, Deutschland
                   </div>
                 </div>
               </div>
@@ -95,21 +95,6 @@ const Contact = () => {
                     Sa: 10:00 - 14:00 Uhr
                   </div>
                 </div>
-              </div>
-            </div>
-
-            {/* Quick Contact Options */}
-            <div className="bg-gradient-to-r from-blue-600 to-purple-600 rounded-xl p-6 text-white">
-              <h4 className="font-semibold mb-4">Sofortiger Kontakt</h4>
-              <div className="space-y-3">
-                <button className="w-full bg-white/20 hover:bg-white/30 p-3 rounded-lg transition-all duration-300 flex items-center justify-center">
-                  <MessageSquare className="w-5 h-5 mr-2" />
-                  Live-Chat starten
-                </button>
-                <button className="w-full bg-white/20 hover:bg-white/30 p-3 rounded-lg transition-all duration-300 flex items-center justify-center">
-                  <Phone className="w-5 h-5 mr-2" />
-                  Rückruf anfordern
-                </button>
               </div>
             </div>
           </div>
