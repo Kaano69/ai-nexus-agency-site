@@ -7,6 +7,7 @@ import ContactDialog from './ContactDialog';
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isContactDialogOpen, setIsContactDialogOpen] = useState(false);
+  const [isTestVersionDialogOpen, setIsTestVersionDialogOpen] = useState(false);
   const location = useLocation();
 
   const navItems = [
@@ -33,9 +34,6 @@ const Navigation = () => {
               <div className="bg-gradient-to-r from-blue-600 to-purple-600 p-2 rounded-lg">
                 <Bot className="h-6 w-6 text-white" />
               </div>
-              <span className="text-xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-                AI-Solutions
-              </span>
             </Link>
           </div>
 
@@ -54,6 +52,12 @@ const Navigation = () => {
                 {item.name}
               </Link>
             ))}
+            <button 
+              onClick={() => setIsTestVersionDialogOpen(true)}
+              className="bg-gradient-to-r from-green-600 to-green-700 text-white px-6 py-2 rounded-lg font-medium hover:shadow-lg transition-all duration-300 transform hover:scale-105"
+            >
+              Kostenlose Testversion anfragen
+            </button>
             <button 
               onClick={() => setIsContactDialogOpen(true)}
               className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-6 py-2 rounded-lg font-medium hover:shadow-lg transition-all duration-300 transform hover:scale-105"
@@ -93,6 +97,15 @@ const Navigation = () => {
               ))}
               <button 
                 onClick={() => {
+                  setIsTestVersionDialogOpen(true);
+                  setIsOpen(false);
+                }}
+                className="w-full mt-2 bg-gradient-to-r from-green-600 to-green-700 text-white px-6 py-2 rounded-lg font-medium"
+              >
+                Kostenlose Testversion anfragen
+              </button>
+              <button 
+                onClick={() => {
                   setIsContactDialogOpen(true);
                   setIsOpen(false);
                 }}
@@ -108,6 +121,11 @@ const Navigation = () => {
       <ContactDialog 
         open={isContactDialogOpen} 
         onOpenChange={setIsContactDialogOpen} 
+      />
+      
+      <ContactDialog 
+        open={isTestVersionDialogOpen} 
+        onOpenChange={setIsTestVersionDialogOpen} 
       />
     </nav>
   );
