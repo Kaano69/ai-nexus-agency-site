@@ -30,14 +30,14 @@ const Impressum = () => {
                 <h2 className="text-xl font-semibold text-gray-900 mb-4">Kontakt</h2>
                 <div className="space-y-2">
                   <p>Telefon: +49 (0) 6224 9999999</p>
-                  <p>E-Mail: kontakt@pk-prozessautomatisierung.de</p>
+                  <p>E-Mail: kontakt@pk-prozess.de</p>
                 </div>
               </div>
 
               <div>
                 <h2 className="text-xl font-semibold text-gray-900 mb-4">Vertreten durch</h2>
                 <div className="space-y-2">
-                  <p>Kaan Kilic (CTO & Botentwickler)</p>
+                  <p>Kaan Kilic (CTO)</p>
                   <p>Adrian Pajaziti (CBO)</p>
                 </div>
               </div>
