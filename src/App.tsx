@@ -14,6 +14,7 @@ import Impressum from "./pages/Impressum";
 import Cookies from "./pages/Cookies";
 import NotFound from "./pages/NotFound";
 import CookieBanner from "./components/CookieBanner";
+import PasswordProtection from "./components/PasswordProtection";
 
 const queryClient = new QueryClient();
 
@@ -22,21 +23,23 @@ const App = () => (
     <TooltipProvider>
       <Toaster />
       <Sonner />
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Index />} />
-          <Route path="/services" element={<ServicesPage />} />
-          <Route path="/about" element={<AboutPage />} />
-          <Route path="/cases" element={<CasesPage />} />
-          <Route path="/contact" element={<ContactPage />} />
-          <Route path="/privacy" element={<PrivacyAndTerms />} />
-          <Route path="/impressum" element={<Impressum />} />
-          <Route path="/cookies" element={<Cookies />} />
-          {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-          <Route path="*" element={<NotFound />} />
-        </Routes>
-        <CookieBanner />
-      </BrowserRouter>
+      <PasswordProtection>
+        <BrowserRouter>
+          <Routes>
+            <Route path="/" element={<Index />} />
+            <Route path="/services" element={<ServicesPage />} />
+            <Route path="/about" element={<AboutPage />} />
+            <Route path="/cases" element={<CasesPage />} />
+            <Route path="/contact" element={<ContactPage />} />
+            <Route path="/privacy" element={<PrivacyAndTerms />} />
+            <Route path="/impressum" element={<Impressum />} />
+            <Route path="/cookies" element={<Cookies />} />
+            {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+            <Route path="*" element={<NotFound />} />
+          </Routes>
+          <CookieBanner />
+        </BrowserRouter>
+      </PasswordProtection>
     </TooltipProvider>
   </QueryClientProvider>
 );
