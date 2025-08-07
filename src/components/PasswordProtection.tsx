@@ -33,6 +33,8 @@ const PasswordProtection: React.FC<PasswordProtectionProps> = ({ children }) => 
     if (password === CORRECT_PASSWORD) {
       localStorage.setItem(STORAGE_KEY, password);
       setIsAuthenticated(true);
+      // Trigger custom event for chat widget initialization
+      document.dispatchEvent(new CustomEvent('authenticationSuccess'));
     } else {
       setError('Falsches Passwort. Bitte versuchen Sie es erneut.');
       setPassword('');

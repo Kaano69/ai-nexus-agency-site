@@ -63,17 +63,38 @@
     <script src="https://cdn.gpteng.co/gptengineer.js" type="module"></script>
     <script type="module" src="/src/main.tsx"></script>
     
-    <!-- n8n Chat Widget -->
+    <!-- n8n Chat Widget - Only loads after password authentication -->
     <script type="module">
-      import { createChat } from 'https://cdn.jsdelivr.net/npm/@n8n/chat/dist/chat.bundle.es.js';
+      // Check if user is authenticated before loading chat widget
+      function initChatWidget() {
+        const isAuthenticated = localStorage.getItem('pk_auth_session') === 'AdrianKaan';
+        
+        if (isAuthenticated) {
+          import('https://cdn.jsdelivr.net/npm/@n8n/chat/dist/chat.bundle.es.js')
+            .then(({ createChat }) => {
+              createChat({
+                webhookUrl: 'https://n8n.heideldesign.de/webhook/0417b7d0-1edd-4618-9975-64c28ff24692/chat',
+                initialMessages: [
+                  'Hallo 👋',
+                  'Mein Name ist Hannah, wie kann ich dir heute helfen?'
+                ],
+              });
+            });
+        }
+      }
 
-      createChat({
-        webhookUrl: 'https://n8n.heideldesign.de/webhook/0417b7d0-1edd-4618-9975-64c28ff24692/chat',
-        initialMessages: [
-          'Hallo 👋',
-          'Mein Name ist Hannah, wie kann ich dir heute helfen?'
-        ],
+      // Initialize on page load
+      initChatWidget();
+      
+      // Also listen for authentication changes
+      window.addEventListener('storage', (e) => {
+        if (e.key === 'pk_auth_session' && e.newValue === 'AdrianKaan') {
+          initChatWidget();
+        }
       });
+      
+      // For same-tab authentication events
+      document.addEventListener('authenticationSuccess', initChatWidget);
     </script>
   </body>
 </html>
